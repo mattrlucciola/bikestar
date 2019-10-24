@@ -164,4 +164,17 @@ div.trail {
 width: 9%;
 padding: 0px 10px 0px 5px;
 }
+.trail{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+img{
+  height: 50%;
+  width: 90%;
+  align-self: center;
+}
+.map {
+  width: 50%;
+}
 }
