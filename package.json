@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server",
+    "start": "node server.js",
+    "dev": "npm run server",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
     "seed": "babel-node ./seed.js",
     "createdevdb": "createdb -U postgres -W ",
-    "rebuild-database": "npm run resetdb && npm run seed"
+    "rebuild-database": "npm run resetdb && npm run seed",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
