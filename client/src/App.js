@@ -35,7 +35,6 @@ function App() {
   }
 
   return (
-    
     <BrowserRouter>
       <Doc />
       <div className="App">
