@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -16,26 +20,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-a {
-  all:unset;
-}
 
-div.nav {
-  position: relative;
-  width: 100%;
-  /* display: flex; */
-  /* flex-flow: column; */
-}
-  div.nav img{
-  }
-  div.nav .links {
-    /* justify-content: center; */
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    margin: 20px auto;
-    top: 0;
-  }
   div.nav .search{
     position: absolute;
     bottom: 0;
@@ -43,11 +28,8 @@ div.nav {
     width: 100%;
   }
   div.nav a {
-    background: rgba(233, 233, 233, 0.5);
     padding: 0, 0, 0, 20;
     display: inline-block;
-    width: 60px;
-    border-radius: 10px;
   }
   div.nav .search {
     position: absolute;
@@ -56,14 +38,16 @@ div.nav {
     margin: 10px 0 10px 60px;
   }
     div.nav .search input {
-      background: rgba(255, 255, 255, 0.671);
+      background: rgba(255, 255, 255, 0);
       height: 45px;
       width: 55%;
+      color: rgb(222, 222, 222);
+      font-size: 18px;
       border: 4px solid black;
       border-radius: 4px;
       padding: 12px 20px;
       margin: 2px;
-      box-sizing: border-box;
+      box-sizing: border-box;  
     }
 
 
@@ -86,27 +70,26 @@ div.state {
 .nav {
   position: relative;
   width: 100%;
-  /* list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-   */
 }
 
-.links {
-  position: absolute;
-  width: 100%;
-  margin: 20px 5px;
-  top: 0;
+
+.links .state-trail{
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  position: fixed;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 45%;
+  padding: 6px;
+  text-align: center;
 }
 
-/* .nav a {
-  float: left;
-  margin: 5px;
-} */
-
-.links a {
+a {
   display: block;
   color: rgb(50, 46, 90);
   text-align: center;
@@ -114,12 +97,27 @@ div.state {
   margin: 0 10px;
   text-decoration: none;
 }
-.trail-detail{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-justify-content: center;
+
+.user-menu {
+  float: right;
+  margin-right: 3px;
+  position: fixed;
+  right: 0;
 }
+
+.user-menu a {
+  margin-right: 3px;
+}
+
+.bike-star {
+  color: rgb(50, 46, 90);
+  text-align: left;
+  position: fixed;
+  left: 0;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
 div.trail {
   display: flex;
   width: 100%;
@@ -191,4 +189,113 @@ img{
 .map {
   width: 50%;
 }
+}
+  .input-update-trail-description{
+    width: 90%;
+  }
+
+
+form {
+  /* margin: 40px, 20px, 20px, 40px; */
+  margin: 0, auto;
+}
+
+.user-new {
+  width: 40%;
+  padding: 14px;
+  background-color: white;
+  float: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* Set a style for the submit button */
+.submit-user {
+  background-color: rgb(222, 222, 222);
+  color: white;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  float: center;
+  opacity: 0.9;
+}
+
+.submit-user:hover {
+  opacity: 1;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .state-trail {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0, 0.0);
+  }
+  .state-trail a{
+    padding: 0;
+    margin: 3px;
+    background-color: rgba(0,0,0, 0.0);
+  }
+  .links .state-trail{
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 25%;
+    padding: 6px;
+    text-align: center;
+  }
+  .card-list {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+.trail-info-container {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+div.trail img {
+  border-radius: 5px;
+  width: 100px;
+} 
+}
+
+@media screen and (max-width: 600px) {
 }

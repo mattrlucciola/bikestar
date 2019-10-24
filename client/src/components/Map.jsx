@@ -9,10 +9,10 @@ const geolocateStyle ={
 }
 
 
-export default function Map(props){
-  console.log(props.info);
+export default function Map(info){
   
-  const {latitude,longitude} = props.info
+  
+  const {latitude,longitude} = info
   console.log(latitude, longitude);
   
   

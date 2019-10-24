@@ -4,10 +4,7 @@
   "description": "front end app to bike trail application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "dev": "npm run server",
+    "start": "npm run server",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
