@@ -1,10 +1,26 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize(
-    {   database: "bikingtrails_db",
-        dialect: "postgres"
-    }
-)
+export const sequelize =
+    (process.env.DATABASE_URL === undefined || process.env.DATABASE_URL === null) 
+    ? new Sequelize ({
+        database: "bikingtrails_db",
+        username: "postgres",
+        password: "postgres",
+        dialect:  "postgres",
+    })
+    : new Sequelize(
+        process.env.DATABASE_URL,{
+            // use_env_variable: "DATABASE_URL",
+            // "database": process.env.DATABASE_URL,
+            protocol:"postgres",
+            dialect: "postgres",
+            logging:true,    
+            // port: 5432,
+            dialectOptions: {
+                ssl: true
+            }
+    })
+
 
 // state model
 export class State extends Model{}
@@ -24,7 +40,21 @@ State.init(
 )
 
 // trail model
-export class Trail extends Model {};
+export class Trail extends Model {}
+Trail.init(
+    {
+        city: DataTypes.STRING,
+        state: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE,
+    },
+    {
+        freezeTableName: true,
+        tableName: "States",
+        sequelize
+    }
+)
+
 Trail.init(
     {
         name: DataTypes.STRING,

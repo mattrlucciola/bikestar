@@ -4,16 +4,23 @@
   "description": "front end app to bike trail application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
     "dev": "npm run server",
+    "start": "node ./build/server.js",
+    "createdevdb": "createdb -U postgres -W ",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
-    "resetdb": "babel-node ./resetDb.js",
     "seed": "babel-node ./seed.js",
-    "createdevdb": "createdb -U postgres -W ",
+    "resetdb": "babel-node ./resetDb.js",
     "rebuild-database": "npm run resetdb && npm run seed",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "node-resetdb": "node ./build/resetDb.js",
+    "node-seed": "node ./build/seed.js",
+    "node-rebuild-database": "npm run node-resetdb && npm run node-seed",
+    "babel-build": "npx babel models.js routes.js seed.js resetDb.js server.js --out-dir build",
+    "build-client": "cd client && npm install --only=dev && npm install && npm run build",
+    "premove-client-build": "npx make-dir ./build/client/build",
+    "move-client-build": "ncp ./client/build ./build/client/build",
+    "build": "npm run babel-build && npm run build-client && npm run move-client-build",
+    "postbuild": "npm run node-rebuild-database"
   },
   "engines": {
     "node": "10.16.0"
@@ -25,11 +32,13 @@
   "author": "Matt Lucciola, Marcos Dominguez, Mohammad Jaiteh",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
-    "add": "^2.0.6",
-    "babel-watch": "^7.0.0"
+    "babel-watch": "^7.0.0",
+    "make-dir-cli": "^2.0.0",
+    "ncp": "^2.0.0"
   },
   "keywords": [
     "moutain",

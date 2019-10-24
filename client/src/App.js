@@ -28,16 +28,14 @@ import './App.css';
 import Doc from './components/Doc'
 function App() {
   let [search, setSearch] = useState('');
-  const searchChange = (e) => {
-    let searchValue = e.target.value;
-    setSearch(searchValue)
-  }
+  let [useSearch, setUseSearch] = useState(false);
+  const searchChange = (e) => {setSearch(e.target.value)}
 
   return (
     <BrowserRouter>
       <Doc />
       <div className="App">
-        <Nav searchChange={searchChange} search={search}/>
+        <Nav searchChange={searchChange} search={search} useSearch={{useSearch, setUseSearch}}/>
         <Switch>
           <Route exact path='/states/:id' render={(props) => <State props={props} />} />
           <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>

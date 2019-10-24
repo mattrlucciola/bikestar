@@ -2,7 +2,7 @@ import React from 'react';
 export default function Search({fxns, search}){
     const {searchChange} = fxns;
     const searchSubmit = (e) => {e.preventDefault()}
-
+    console.log('hi')
     return(
         <div className='search'>
             <form onSubmit={searchSubmit}>

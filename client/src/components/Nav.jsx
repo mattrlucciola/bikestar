@@ -1,20 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Search from './Search';
+import BurgerMenu from './BurgerMenu';
 
-export default function Nav({searchChange, search}){
+export default function Nav({searchChange, search, useSearch}){
     // console.log(searchChange, search);
+
+    let [isOpen,setIsOpen] = useState(false)
+
+    const clickHandler = () => {
+        setIsOpen(!isOpen)        
+    }
+
     return(
         <div className='nav'>
-            <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
             <div className="links">
-                <Link to='/'>Home</Link>
+            <div className="bike-star">
+            <Link to='/'>BikeStar</Link>
+            </div>
+            <div className="state-trail">
                 <Link to='/states'>States</Link>
                 <Link to='/trails'>Trails</Link>
-                <Link to='/user/new' >Create new user!</Link>
-                <Link to='/user/edit' >Edit user</Link>
-            </div> 
-            <Search fxns={{searchChange}} search={search} />
+            </div>
+                {/* <Link to=  >Bur Menu</Link> */}
+                {/* <BurgerMenu /> */}
+                <div className="user-menu" onClick={clickHandler}>
+                    Users &#9776;
+                    {isOpen && <BurgerMenu />}
+                </div>
+            </div>
+            <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
+            {(useSearch) && <Search fxns={{searchChange}} search={search} />}
         </div>
     )
 }
