@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-const path = require('path');
+// const path = require('path');
+import path from 'path';
 import logger from 'morgan';
 import { allTrailsRouter, allStatesRouter, userRouter} from './routes';
 
@@ -23,7 +24,7 @@ app.get('*', (req,res) =>{
 });
 
 
-const PORT = 51011
+const PORT = (+process.env.PORT) || 51011;
 
 app.listen(PORT)
 console.log('The Server is surfing on Port::', PORT)
