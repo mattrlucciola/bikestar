@@ -2,10 +2,11 @@
   "name": "bikingtrails",
   "version": "1.0.0",
   "description": "front end app to bike trail application",
-  "main": "index.js",
+  "main": "server.js",
+  "homepage": "https://tranquil-bastion-44697.herokuapp.com/",
   "scripts": {
-    "dev": "npm run server",
     "start": "node ./build/server.js",
+    "dev": "npm run server",
     "createdevdb": "createdb -U postgres -W ",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
@@ -23,7 +24,7 @@
     "postbuild": "npm run node-rebuild-database"
   },
   "engines": {
-    "node": "10.16.0"
+    "node": "12.13.0"
   },
   "repository": {
     "type": "git",
