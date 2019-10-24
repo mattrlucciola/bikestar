@@ -1,6 +1,9 @@
 import React, { useState, useEffect} from 'react';
 import ReactMapGL from 'react-map-gl'
-export default function Map(){
+export default function Map({info}){
+  const {latitude,longitude} = info
+  console.log(latitude);
+  
     const viewPortWidth = () => {
         if(window.innerWidth < 500){
         return window.innerWidth
@@ -23,8 +26,8 @@ export default function Map(){
     const [viewport, setViewport] = useState({
       width:viewPortWidth(),
       height:viewPortHeight(),
-      latitude: 40.7433,
-      longitude: -73.9485,
+      latitude: latitude,
+      longitude: longitude,
       zoom:viewPortZoom()
     });
     
