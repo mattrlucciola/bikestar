@@ -10,12 +10,9 @@ export const sequelize =
     })
     : new Sequelize(
         process.env.DATABASE_URL,{
-            // use_env_variable: "DATABASE_URL",
-            // "database": process.env.DATABASE_URL,
             protocol:"postgres",
             dialect: "postgres",
             logging:true,    
-            // port: 5432,
             dialectOptions: {
                 ssl: true
             }
