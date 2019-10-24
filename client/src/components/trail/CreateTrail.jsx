@@ -30,18 +30,6 @@ export default function CreateTrail(){
         } catch (err) {console.log(err)}
     }
 
-    /*
-    name: '',
-    summary: '',
-    imgSmall: 'url',
-    imgMedium: 'url',
-    city: '',
-    state: '',
-    difficulty: '',
-    length: 0,
-    latitude: null,
-    longitude: null,
-    */
     const buildForm = () => {
         let formArr = [];
         for (let key in trailObj) {
