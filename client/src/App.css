@@ -164,6 +164,12 @@ div.trail {
   justify-content: center;
   flex-direction: row;
 }
+.home-map{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-self: center;
+}
 @media (max-width: 500px) {
 .logo{
 width: 9%;
@@ -178,6 +184,9 @@ img{
   height: 50%;
   width: 90%;
   align-self: center;
+}
+.home-map{
+  display: inline;
 }
 .map {
   width: 50%;
