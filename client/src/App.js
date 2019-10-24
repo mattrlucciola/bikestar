@@ -26,6 +26,7 @@ import './App.css';
 
 //Title
 import Doc from './components/Doc'
+import Footer from './components/Footer'
 function App() {
   let [search, setSearch] = useState('');
   const searchChange = (e) => {
@@ -53,6 +54,7 @@ function App() {
           <Route exact path='/'></Route>
         </Switch>
       </div>
+      <Footer/>
     </BrowserRouter>
   );
 }
