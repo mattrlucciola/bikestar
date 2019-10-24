@@ -83,34 +83,55 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Search| M | 2 hrs| 1 hrs |1 hrs |
 | Adding Trails| H | 4 hrs| 4hrs | 4hrs |
-| Adding state  | H | 5 hrs| 2.5hrs | 4hrs |
+| Adding state  | H | 5 hrs| 2.5hrs | 2.5hrs |
 | Adding Map design  | M | 4 hrs| hrs | hrs |
-| Adding Map API| M | 4 hrs| hrs | hrs |
+| Adding Map API| M | 4 hrs| 2hrs | 2hrs |
 | Adding Nav| M | 2 hrs| 1hrs | 1hrs |
 | Adding Geolocation| M | 3 hrs| hrs | hrs |
 | Adding Create Trail| M | 2 hrs| 2hrs | 2hrs |
 | Building DataBase | H | 2 hrs| 3hrs | 3hrs |
-| Building Trails Tables| H | 4 hrs| hrs | hrs |
+| Building Trails Tables| H | 4 hrs| 3hrs | 3hrs |
 | Building state Table| H | 4 hrs| 4hrs | 4hrs |
-| Building Trails routes| H | 4 hrs|4 hrs | hrs |
+| Building Trails routes| H | 4 hrs|4 hrs | 4hrs |
 | Building state Routes | H | 4 hrs| 4hrs | 4hrs |
 | Seeding tables| M | 3 hrs| 1hrs | 1hrs |
 | Database Migration | M | 2 hrs| 1hrs | 1 hrs |
-| Debugging| M | 4 hrs| hrs | hrs |
-| Project Approval | M | 1 hrs| hrs | hrs |
-| Working with backend api | H | 3 hrs| hrs | hrs |
+| Debugging| M | 4 hrs| 5hrs | 5hrs |
+| Project Approval | M | 1 hrs| 1hrs | 1hrs |
+| Working with backend api | H | 3 hrs| 3hrs | 3hrs |
 | Styling | M | 6 hrs| 6 hrs | 6 hrs |
 | testing routes and components| M | 4 hrs| 4 hrs | 4 hrs |
-| Total | H | 63 hrs| hrs | hrs |
+| Total | H | 63 hrs| 51.5 hrs | 51.5 hrs |
 
 
 ## Additional Libraries
  Axios, react-router-dom, react-router, OpenLayers 
 
-## Code Snippet
+## Code Snippet 
+backend: 
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+Gets a single state's info with all trails associated with that state.
+```
+const getStateByID = async (
+    /**@type{express.Request}*/req,
+    /**@type{express.Response}*/res) => {
+    try{
+        const id = req.params.id
+        const state = await State.findOne({
+            where: {id: id}
+        })
+        const trails = await Trail.findAll({
+            where:{stateId:id}
+        })
+        return res.status(200).json({state, trails}) 
+    }catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
 
+allStatesRouter.get("/states/:id", getStateByID)
+```
+front end: 
 ```
 function reverse(string) {
 	// here is the code to reverse a string of text

@@ -114,7 +114,12 @@ div.state {
   margin: 0 10px;
   text-decoration: none;
 }
-
+.trail-detail{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+justify-content: center;
+}
 div.trail {
   display: flex;
   width: 100%;
@@ -150,7 +155,9 @@ div.trail {
   padding: 0px 10px 0px 5px;
 }
 .trail-info-container {
-  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 2; */
 }
 .created {
   display: flex;
@@ -161,5 +168,18 @@ div.trail {
 .logo{
 width: 9%;
 padding: 0px 10px 0px 5px;
+}
+.trail{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+img{
+  height: 50%;
+  width: 90%;
+  align-self: center;
+}
+.map {
+  width: 50%;
 }
 }

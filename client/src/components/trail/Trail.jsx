@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 // components
-// import Map from '../Map';
+import Map from '../Map';
 import EditTrail from './EditTrail';
 
 // seeds
@@ -40,7 +40,7 @@ export default function Trail({props}){
     return(
         <div className='trail'>
             <img className='trail-img' src={imgMedium} alt='' />
-            {/* <Map info={{trailObj}} model={'trail'} /> */}
+            <div className= 'trail-detail'>
             <div className='trail-name'>{name}</div>
             <div className='trail-location'>City: {city}, State: {state}</div>
             <div className='trail-coordinates'>{latitude}, {longitude}</div>
@@ -53,8 +53,9 @@ export default function Trail({props}){
                 <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
                 {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
             </div>
+            <Map className= 'map' info={trailObj} model={'trail'} />
             {/* <EditTrail trailObj={{trailObj}} /> */}
-
+            </div>
         </div>
     )
 }
