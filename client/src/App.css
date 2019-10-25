@@ -21,23 +21,28 @@
   color: white;
 }
 
-  div.nav .search{
+/*//////////////////////////////// NAV ////////////////////////////////*/
+.nav {
+  position: relative;
+  width: 100%;
+}
+  .nav .search{
     position: absolute;
     bottom: 0;
     margin: 20px auto;
     width: 100%;
   }
-  div.nav a {
+  .nav a {
     padding: 0, 0, 0, 20;
     display: inline-block;
   }
-  div.nav .search {
+  .nav .search {
     position: absolute;
     width: 100%;
     bottom: 0;
     /* margin: 10px 0 10px 60px; */
   }
-    div.nav .search input {
+    .nav .search input {
       background: rgba(255, 255, 255, 0);
       height: 45px;
       width: 55%;
@@ -61,16 +66,13 @@ a.trail-url {
   color: black;
 }
 
-div.state {
+.state {
   background-color: rgb(222, 222, 222);
   margin: 5px;
   padding-bottom: 10px;
 }
 
-.nav {
-  position: relative;
-  width: 100%;
-}
+
 
 
 .links .state-trail{
@@ -119,27 +121,16 @@ a {
   text-decoration: none;
 }
 
-.trail-detail{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  justify-content: center;
-}
-div.trail {
+.trail {
   display: flex;
   width: 100%;
   background-color: rgb(222, 222, 222);
   margin: 5px;
   padding-bottom: 10px;
 }
-  div.trail img {
+  .trail img {
     border-radius: 5px;
   } 
-  .edit-toggle{
-    padding: 10px;
-    background: green;
-    cursor: pointer;
-  }
   .trail-edit{
     position: absolute;
     right: 0;
@@ -148,6 +139,17 @@ div.trail {
   }
   .trail-edit-card{
     background: purple;
+  }
+  .trail-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .edit-toggle{
+    padding: 10px;
+    background: green;
+    cursor: pointer;
   }
     .input-update-trail-description{
       width: 90%;
@@ -176,26 +178,26 @@ div.trail {
   align-self: center;
 }
 @media (max-width: 500px) {
-.logo{
-width: 9%;
-padding: 0px 10px 0px 5px;
-}
-.trail{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-img{
-  height: 50%;
-  width: 90%;
-  align-self: center;
-}
-.home-map{
-  display: inline;
-}
-.map {
-  width: 50%;
-}
+  .logo{
+    width: 9%;
+    padding: 0px 10px 0px 5px;
+  }
+  .trail{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  img{
+    height: 50%;
+    width: 90%;
+    align-self: center;
+  }
+  .home-map{
+    display: inline;
+  }
+  .map {
+    width: 50%;
+  }
 }
   .input-update-trail-description{
     width: 90%;
