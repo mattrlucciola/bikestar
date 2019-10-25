@@ -42,10 +42,8 @@ export default function Nav({searchChange, search}){
                     <Link to='/states'>States</Link>
                     <Link to='/trails'>Trails</Link>
                 </div>
-                <div className="user-menu" onClick={clickHandler}>
-                    Users &#9776;
-                    {isOpen && <BurgerMenu />}
-                </div>
+                <div className="user-menu" onClick={clickHandler}>Users &#9776;</div>
+                {isOpen && <BurgerMenu />}
             </div>
             <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
             {(useSearch) && <Search fxns={{searchChange}} search={search} />}

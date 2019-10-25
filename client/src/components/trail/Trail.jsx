@@ -7,6 +7,7 @@ import axios from 'axios';
 // components
 import Map from '../Map';
 import EditTrail from './EditTrail';
+import { EACCES } from 'constants';
 
 // seeds
 export default function Trail({props}){
@@ -33,9 +34,9 @@ export default function Trail({props}){
     }, [id]) // now this
     // }, []) // orig this
     
-    useEffect(() => {
-        if (editTrailOpen) {setEditTrailOpen(false);}
-    }, [trailObj])
+    // useEffect(() => {
+    //     if (editTrailOpen || e.target.className ==='edit-toggle') {setEditTrailOpen(false);}
+    // }, [trailObj])
 
     return(
         <div className='trail'>
@@ -50,8 +51,8 @@ export default function Trail({props}){
                     <div className="trail-summary">{summary}</div>
                 </div>
                 <div className="edit-toggle-container">
-                    <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
-                    {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
+                    {(!editTrailOpen) && <div className="edit-toggle" onClick={(e) => {(!editTrailOpen && e.target.className ==='edit-toggle') && setEditTrailOpen(true)}} >x</div>}
+                    {(editTrailOpen ) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} setEditTrailOpen={setEditTrailOpen} />}
                 </div>
                 {/* <Map className= 'map' info={trailObj} model={'trail'} /> */}
            </div>

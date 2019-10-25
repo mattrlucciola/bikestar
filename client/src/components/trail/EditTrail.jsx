@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-export default function EditTrail({trailObj, setTrailObj}){
+export default function EditTrail({trailObj, setTrailObj, setEditTrailOpen}){
     let [updatedTrailDesc, setUpdatedTrailDesc] = useState(trailObj['summary']);
 
     const editDescription = (e) => {setUpdatedTrailDesc(e.target.value)}
@@ -15,7 +15,10 @@ export default function EditTrail({trailObj, setTrailObj}){
             setTrailObj({...newTrailObj})
         } catch (err) {console.log(err)}
     }
-    const blurHandler = async () => {setTrailObj({...trailObj})}
+    const blurHandler = () => {
+        setTrailObj({...trailObj})
+        setEditTrailOpen(false)
+    }
     let inputElem = <input className='input-update-trail-description' type='text' onChange={editDescription} value={updatedTrailDesc} onBlur={blurHandler} autoFocus />
 
     return(
