@@ -25,6 +25,7 @@ app.get('*', (req,res) =>{
 
 
 const PORT = (+process.env.PORT) || 51011;
+console.log(PORT);
 
 app.listen(PORT)
 console.log('The Server is surfing on Port::', PORT)
