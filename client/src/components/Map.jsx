@@ -1,30 +1,33 @@
 import React, { useState, useEffect} from 'react';
 import ReactMapGL from 'react-map-gl'
-export default function Map(){
+export default function Map({info}){
+  const {latitude,longitude} = info
+  console.log(latitude);
+  
     const viewPortWidth = () => {
-        if(window.innerWidth < 700){
+        if(window.innerWidth < 500){
         return window.innerWidth
-        }return window.innerWidth*.6
+        }return window.innerWidth*.3
     
     }
     const viewPortHeight = () => {
-        if(window.innerWidth < 700){
-        return window.innerHeight*.5
+        if(window.innerWidth < 500){
+        return window.innerHeight*.4
         }return window.innerHeight
     
     }
     const viewPortZoom = () => {
-      if(window.innerWidth < 700){
-      return 10
-      }return 11.75
+      if(window.innerWidth < 500){
+      return 7
+      }return 8.75
     
     }
     
     const [viewport, setViewport] = useState({
       width:viewPortWidth(),
       height:viewPortHeight(),
-      latitude: 40.7433,
-      longitude: -73.9485,
+      latitude: latitude,
+      longitude: longitude,
       zoom:viewPortZoom()
     });
     

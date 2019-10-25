@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default function CreateTrail(){
     let [trailObj, setTrailObj] = useState({
+<<<<<<< HEAD
         name:'',
         summary:'',
         imgSmall:'url',
@@ -13,6 +14,18 @@ export default function CreateTrail(){
         length:0,
         latitude:'',
         longitude:'',
+=======
+        name: {val:'', idx: 0},
+        summary: {val:'',idx:1},
+        imgSmall: {val:'url',idx:2},
+        imgMedium: {val:'url',idx:3},
+        city: {val:'',idx:4},
+        state: {val:'',idx:5},
+        difficulty: {val:'',idx:6},
+        length: {val:0,idx:7},
+        latitude: {val:'',idx:8},
+        longitude: {val:'',idx:9},
+>>>>>>> Marcos
     })
     // let keysList = Object.keys(trailObj)
     
@@ -30,6 +43,7 @@ export default function CreateTrail(){
             document.location = '/trails'
         } catch (err) {console.log(err)}
     }
+<<<<<<< HEAD
     const changeHandler = (e, key) => {setTrailObj({...trailObj, [key]:e.target.value})};
 
     return(
@@ -52,6 +66,38 @@ export default function CreateTrail(){
                 </div>
                 Summary<div classname='summary'><input onChange={(e) => {changeHandler(e, 'summary')}} value={trailObj['summary']} key={`input-trail-${'summary'}`} /></div>
                 Image URL<div classname='image'><input onChange={(e) => {changeHandler(e, 'imgMedium')}} value={trailObj['imgMedium']} key={`input-trail-${'imgMedium'}`} /></div>
+=======
+    const changeHandler = (e, key) => {
+        setTrailObj({...trailObj, [key]: e.target.value });
+    }
+
+    const buildForm = () => {
+        let formArr = [];
+        for (let key in trailObj) {
+            let formElem = 
+                <div className={`new-trail-${key}`} >
+                    {key}<input onChange={
+                        (e) => {changeHandler(e, key)}
+                    } value={trailObj[key].val}/>
+                </div>
+            formArr.push(formElem);
+        }
+        formArr.push(
+            <div className="submit-trail">
+                <button type='submit'>Submit</button>
+            </div>
+        );
+        return formArr;
+        // setNewFormArr(formArr)
+    }
+    // useEffect(()=>{
+    //     buildForm()
+    // },[])
+    return(
+        <div className='create-trail'>
+            <form onSubmit={submitHandler} >
+                {buildForm()}
+>>>>>>> Marcos
             </form>
         </div>
     )

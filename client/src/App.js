@@ -26,6 +26,8 @@ import './App.css';
 
 //Title
 import Doc from './components/Doc'
+import Home from './components/Home'
+import Footer from './components/Footer'
 function App() {
   let [search, setSearch] = useState('');
   let [useSearch, setUseSearch] = useState(false);
@@ -47,9 +49,10 @@ function App() {
           <Route exact path='/user/edit'><EditUserMenu /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
           <Route exact path='/user'><User /></Route>
-          <Route exact path='/'></Route>
+          <Route exact path='/'><Home/></Route>
         </Switch>
       </div>
+      <Footer/>
     </BrowserRouter>
   );
 }
