@@ -23,7 +23,7 @@ export default function NewUser(){
         <div className='user-new'>
             <form onSubmit={submitHandler} >
                 <div className="first-name">
-                    {`First Name: `}
+                    {`First Name: `} 
                     <input type='text' onChange={(e) => {setFirstName(e.target.value)}} value={firstName} />
                 </div>
                 <div className="last-name">

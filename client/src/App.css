@@ -35,7 +35,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    margin: 10px 0 10px 60px;
+    /* margin: 10px 0 10px 60px; */
   }
     div.nav .search input {
       background: rgba(255, 255, 255, 0);
@@ -103,6 +103,7 @@ a {
   margin-right: 3px;
   position: fixed;
   right: 0;
+  cursor: pointer;
 }
 
 .user-menu a {
@@ -153,45 +154,41 @@ div.trail {
   }
 
 
-form {
-  /* margin: 40px, 20px, 20px, 40px; */
-  margin: 0, auto;
-}
 
 .user-new {
-  width: 40%;
   padding: 14px;
-  background-color: white;
-  float: center;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
+  background-color: rgb(216, 219, 219);
+  /* float: center; */
   padding: 15px;
-  font-size: 20px;
-  display: inline-block;
+  margin: 2px;
+  display: inline;
   border: none;
+  font-size: 20px;
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-
-/* Set a style for the submit button */
-.submit-user {
-  background-color: rgb(222, 222, 222);
-  color: white;
-  padding: 8px 12px;
-  margin: 8px 0;
+.user-edit-card form, .create-trail {
+  padding: 14px;
+  margin: 0 auto;
   border: none;
+  font-size: 20px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.submit-user {
+  color: white;
   cursor: pointer;
-  width: 50%;
   float: center;
   opacity: 0.9;
+  width: 30px;
 }
 
 .submit-user:hover {
@@ -252,47 +249,25 @@ input[type=text]:focus, input[type=password]:focus {
   div.trail img {
     border-radius: 5px;
     width: 100px;
+  } 
+
+  .trail .trail-img {
+    width: 150px;
+    height: 150px;
+  }
+  .trail-info {
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .input-update-trail-description{
-    width: 90%;
-  }
-  /* div.trail-list {
-    text-align: right;
-  } */
-  .logo{
-    width: 4%;
-    padding: 0px 10px 0px 5px;
-  }
-  .trail-info-container {
-    display: flex;
-    flex-direction: column;
-    /* flex-grow: 2; */
-  }
-  .created {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-}
-@media (max-width: 500px) {
-  .logo{
-    width: 9%;
-    padding: 0px 10px 0px 5px;
-  }
-  .trail{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
-  img{
-    height: 50%;
-    width: 90%;
-    align-self: center;
-  }
-  .map {
-    width: 50%;
+@media screen and (max-width: 710px) {
+  div.trail img {
+    border-radius: 5px;
+    width: 100px;
+  } 
+
+  .trail .trail-img {
+    width: 150px;
+    height: 150px;
   }
 }
