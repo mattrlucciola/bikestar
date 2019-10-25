@@ -17,7 +17,6 @@ import EditTrail from './components/trail/EditTrail';
 
 // user components
 import NewUser from './components/user/NewUser';
-import User from './components/user/User';
 import EditUser from './components/user/EditUser';
 import EditUserMenu from './components/user/EditUserMenu';
 
@@ -48,7 +47,6 @@ function App() {
           <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
           <Route exact path='/user/edit'><EditUserMenu /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
-          <Route exact path='/user'><User /></Route>
           <Route exact path='/'><Home/></Route>
         </Switch>
       </div>

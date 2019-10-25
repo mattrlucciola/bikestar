@@ -35,7 +35,7 @@ export default function CreateTrail(){
     return(
         <div className='create-trail'>
             <form onSubmit={submitHandler} >
-                Name<div classname='name'><input onChange={(e) => {changeHandler(e, 'name')}} value={trailObj['name']} key={`input-trail-${'name'}`} /></div>
+                NamE<div classname='name'><input onChange={(e) => {changeHandler(e, 'name')}} value={trailObj['name']} key={`input-trail-${'name'}`} /></div>
                 City<div classname='city'><input onChange={(e) => {changeHandler(e, 'city')}} value={trailObj['city']} key={`input-trail-${'city'}`} /></div>
                 State<div classname='state'><input onChange={(e) => {changeHandler(e, 'state')}} value={trailObj['state']} key={`input-trail-${'state'}`} /></div>
                 Latitude<div classname='latitude'><input onChange={(e) => {changeHandler(e, 'latitude')}} value={trailObj['latitude']} key={`input-trail-${'latitude'}`} /></div>

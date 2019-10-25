@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 export default function EditUser({props}){
-    let [userObj, setUserObj] = useState({}) 
+    let [userObj, setUserObj] = useState({});
     let id = props.match.params.id
     const getUserInfo = async () => {
         let query = `/api/users/${id}`
@@ -36,7 +36,6 @@ export default function EditUser({props}){
             }
         } catch (err) {console.log(err)};
     }
-
     return(
         <div className='user-edit'>
             <div className='user-edit-card' >

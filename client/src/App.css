@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
 
-=======
->>>>>>> Marcos
 .App {
   text-align: center;
 }
@@ -100,7 +97,6 @@ a {
   margin: 0 10px;
   text-decoration: none;
 }
-<<<<<<< HEAD
 
 .user-menu {
   float: right;
@@ -122,14 +118,12 @@ a {
   text-decoration: none;
 }
 
-=======
 .trail-detail{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 justify-content: center;
 }
->>>>>>> Marcos
 div.trail {
   display: flex;
   width: 100%;
@@ -154,7 +148,6 @@ div.trail {
   .trail-edit-card{
     background: purple;
   }
-<<<<<<< HEAD
   .input-update-trail-description{
     width: 90%;
   }
@@ -252,55 +245,54 @@ input[type=text]:focus, input[type=password]:focus {
     width: 100%;
   }
 
-.trail-info-container {
-  box-sizing: border-box;
-  font-size: 12px;
-}
-div.trail img {
-  border-radius: 5px;
-  width: 100px;
-} 
+  .trail-info-container {
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+  div.trail img {
+    border-radius: 5px;
+    width: 100px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-=======
-    .input-update-trail-description{
-      width: 90%;
-    }
-/* div.trail-list {
-  text-align: right;
-} */
-.logo{
-  width: 4%;
-  padding: 0px 10px 0px 5px;
-}
-.trail-info-container {
-  display: flex;
-  flex-direction: column;
-  /* flex-grow: 2; */
-}
-.created {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  .input-update-trail-description{
+    width: 90%;
+  }
+  /* div.trail-list {
+    text-align: right;
+  } */
+  .logo{
+    width: 4%;
+    padding: 0px 10px 0px 5px;
+  }
+  .trail-info-container {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 2; */
+  }
+  .created {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 @media (max-width: 500px) {
-.logo{
-width: 9%;
-padding: 0px 10px 0px 5px;
-}
-.trail{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-img{
-  height: 50%;
-  width: 90%;
-  align-self: center;
-}
-.map {
-  width: 50%;
-}
->>>>>>> Marcos
+  .logo{
+    width: 9%;
+    padding: 0px 10px 0px 5px;
+  }
+  .trail{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  img{
+    height: 50%;
+    width: 90%;
+    align-self: center;
+  }
+  .map {
+    width: 50%;
+  }
 }

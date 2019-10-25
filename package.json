@@ -24,7 +24,7 @@
     "postbuild": "npm run node-rebuild-database"
   },
   "engines": {
-    "node": "12.13.0"
+    "node": "10.16.0"
   },
   "repository": {
     "type": "git",
