@@ -35,13 +35,13 @@ export default function CreateTrail(){
     return(
         <div className='create-trail'>
             <form onSubmit={submitHandler} >
-                NamE<div classname='name'><input onChange={(e) => {changeHandler(e, 'name')}} value={trailObj['name']} key={`input-trail-${'name'}`} /></div>
-                City<div classname='city'><input onChange={(e) => {changeHandler(e, 'city')}} value={trailObj['city']} key={`input-trail-${'city'}`} /></div>
-                State<div classname='state'><input onChange={(e) => {changeHandler(e, 'state')}} value={trailObj['state']} key={`input-trail-${'state'}`} /></div>
-                Latitude<div classname='latitude'><input onChange={(e) => {changeHandler(e, 'latitude')}} value={trailObj['latitude']} key={`input-trail-${'latitude'}`} /></div>
-                Longitude<div classname='longitude'><input onChange={(e) => {changeHandler(e, 'longitude')}} value={trailObj['longitude']} key={`input-trail-${'longitude'}`} /></div>
-                Length (Miles)<div classname='length'><input onChange={(e) => {changeHandler(e, 'length')}} value={trailObj['length']} key={`input-trail-${'length'}`} /></div>
-                Difficulty<div classname='difficulty'>
+                NamE<div className='name'><input onChange={(e) => {changeHandler(e, 'name')}} value={trailObj['name']} key={`input-trail-${'name'}`} /></div>
+                City<div className='city'><input onChange={(e) => {changeHandler(e, 'city')}} value={trailObj['city']} key={`input-trail-${'city'}`} /></div>
+                State<div className='state'><input onChange={(e) => {changeHandler(e, 'state')}} value={trailObj['state']} key={`input-trail-${'state'}`} /></div>
+                Latitude<div className='latitude'><input onChange={(e) => {changeHandler(e, 'latitude')}} value={trailObj['latitude']} key={`input-trail-${'latitude'}`} /></div>
+                Longitude<div className='longitude'><input onChange={(e) => {changeHandler(e, 'longitude')}} value={trailObj['longitude']} key={`input-trail-${'longitude'}`} /></div>
+                Length (Miles)<div className='length'><input onChange={(e) => {changeHandler(e, 'length')}} value={trailObj['length']} key={`input-trail-${'length'}`} /></div>
+                Difficulty<div className='difficulty'>
                     <select onChange={(e) => {changeHandler(e, 'difficulty')}} >
                         <option value="Green">Green</option>
                         <option value="Green/Blue">Green/Blue</option>
@@ -50,8 +50,8 @@ export default function CreateTrail(){
                         <option value="Black">Black</option>
                     </select>
                 </div>
-                Summary<div classname='summary'><input onChange={(e) => {changeHandler(e, 'summary')}} value={trailObj['summary']} key={`input-trail-${'summary'}`} /></div>
-                Image URL<div classname='image'><input onChange={(e) => {changeHandler(e, 'imgMedium')}} value={trailObj['imgMedium']} key={`input-trail-${'imgMedium'}`} /></div>
+                Summary<div className='summary'><input onChange={(e) => {changeHandler(e, 'summary')}} value={trailObj['summary']} key={`input-trail-${'summary'}`} /></div>
+                Image URL<div className='image'><input onChange={(e) => {changeHandler(e, 'imgMedium')}} value={trailObj['imgMedium']} key={`input-trail-${'imgMedium'}`} /></div>
             </form>
         </div>
     )

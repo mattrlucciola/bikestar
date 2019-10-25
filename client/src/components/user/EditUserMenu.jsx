@@ -11,21 +11,16 @@ export default function EditUserMenu(){
             let query = `/api/users`;
             let response = await axios.get(query)
             setUsersArr([...response.data.users])
-            console.log([...response.data.users]);
             
         } catch (err) {console.log(err)}
     }
     useEffect(()=>{
-        let usersarr = getUsers();
-        // console.log(usersarr);
-        // setUsersArr(usersarr)
+        getUsers();
     },[])
     return(
         <div className='edit-user-menu'>
             {usersArr.map((user, idx) => {
-                console.log(user, usersArr.length);
                 return  <Link to={`/user/${user.id}/edit`}><UserCard userObj={user} key={`ucrd-${idx}`} /></Link>
-                
             })}
         </div>
     )

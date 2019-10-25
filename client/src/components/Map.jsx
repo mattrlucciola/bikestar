@@ -13,7 +13,7 @@ export default function Map(info){
   
   
   const {latitude,longitude} = info
-  console.log(latitude, longitude);
+  // console.log('lat',latitude, '   long',longitude);
   
   
     const viewPortWidth = () => {

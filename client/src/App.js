@@ -1,5 +1,5 @@
 // react imports
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 // general components
@@ -29,14 +29,17 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 function App() {
   let [search, setSearch] = useState('');
-  let [useSearch, setUseSearch] = useState(false);
   const searchChange = (e) => {setSearch(e.target.value)}
-
+  useEffect(()=>{
+    // if ([].includes(document.location))
+    // setUseSearch()
+    console.log('locationnnn',document.location)
+  })
   return (
     <BrowserRouter>
       <Doc />
       <div className="App">
-        <Nav searchChange={searchChange} search={search} useSearch={{useSearch, setUseSearch}}/>
+        <Nav searchChange={searchChange} search={search} />
         <Switch>
           <Route exact path='/states/:id' render={(props) => <State props={props} />} />
           <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>
@@ -47,7 +50,7 @@ function App() {
           <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
           <Route exact path='/user/edit'><EditUserMenu /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
-          <Route exact path='/'><Home/></Route>
+          {/* <Route exact path='/'><Home /></Route> */}
         </Switch>
       </div>
       <Footer/>

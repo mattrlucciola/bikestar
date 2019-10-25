@@ -53,7 +53,7 @@ export default function Trail({props}){
                     <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
                     {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
                 </div>
-                <Map className= 'map' info={trailObj} model={'trail'} />
+                {/* <Map className= 'map' info={trailObj} model={'trail'} /> */}
            </div>
         </div>
     )
