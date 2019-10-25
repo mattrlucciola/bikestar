@@ -1,8 +1,20 @@
 import React, { useState, useEffect} from 'react';
-import ReactMapGL from 'react-map-gl'
-export default function Map({info}){
+import ReactMapGL, {GeolocateControl} from 'react-map-gl'
+
+
+const geolocateStyle ={
+  float: 'left',
+  margin: '50px',
+  padding: '10px'
+}
+
+
+export default function Map(info){
+  
+  
   const {latitude,longitude} = info
-  console.log(latitude);
+  console.log(latitude, longitude);
+  
   
     const viewPortWidth = () => {
         if(window.innerWidth < 500){
@@ -18,18 +30,21 @@ export default function Map({info}){
     }
     const viewPortZoom = () => {
       if(window.innerWidth < 500){
-      return 7
+      return 6
       }return 8.75
     
     }
-    
+   
+
+
     const [viewport, setViewport] = useState({
       width:viewPortWidth(),
       height:viewPortHeight(),
-      latitude: latitude,
+      latitude: latitude, 
       longitude: longitude,
       zoom:viewPortZoom()
     });
+    
     
     
     const changeViewPort = () =>{
@@ -62,8 +77,13 @@ export default function Map({info}){
                     mapboxApiAccessToken='pk.eyJ1IjoibHVuYXRpYzI0MjAiLCJhIjoiY2syM21ndDh1MGdnejNjcGh5bW81dXdjdSJ9.ewN7SVmckWbKz3dcY_mu8g'
                     
                     onViewportChange={_onViewportChange}
-                >
+                > <GeolocateControl
+                style={geolocateStyle}
+                positionOptions={{enableHighAccuracy: true}}
+                trackUserLocation={true}
+              />
           </ReactMapGL>
+
         </div>
       );
     }

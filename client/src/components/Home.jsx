@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
 
+//import Map
+import Map from './Map'
+
 
 
 
@@ -71,10 +74,12 @@ class Home extends Component {
             <div className="biketrails">
                 {/* <SearchResults coordinates={this.getCoordinates} handleSearchResult={this.parseSearch} />
                 <HikeList trailId={this.state.trailId} trails={this.state.trails} handleClick={this.handleClick} /> */}
-                
+                 <Map className= 'Home-map' />
             </div>
         );
     }
 }
 
 export default Home;
+
+// info={trailObj} model={'trail'} 
