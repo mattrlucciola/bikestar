@@ -4,11 +4,7 @@ export default function Search({fxns, search}){
     const searchSubmit = (e) => {e.preventDefault()}
     
     const selfFocus = (e) => {
-        // let x = window.scrollX, y = window.scrollY;
-        // console.log(x,y);
         e.target.focus({preventScroll: true});
-        // window.scrollTo(x, y);
-        // console.log(x,y);
     }
     return(
         <div className='search'>

@@ -28,6 +28,8 @@ export default function ModelItemsList({model, search}){
                 if (model === 'trail'){
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex) || !!modelItem.city.match(regex)){
                         let trail = modelItem;
+                        console.log(trail);
+                        
                         return <TrailCard trailObj={trail} key={`${model}-${idx}`} />
                     }
                 } else if (model === 'state') {
@@ -41,7 +43,7 @@ export default function ModelItemsList({model, search}){
             setCardList([...localCardList])
         }
         buildCardList()
-    },[modelItemsArr])
+    },[modelItemsArr, search])
     return(
         <div className={`${model}-list`} >
             {(model === 'trail') && <Link to='/trails/new'>Create New Trail</Link>}

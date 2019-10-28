@@ -30,11 +30,7 @@ import Footer from './components/Footer'
 function App() {
   let [search, setSearch] = useState('');
   const searchChange = (e) => {setSearch(e.target.value)}
-  useEffect(()=>{
-    // if ([].includes(document.location))
-    // setUseSearch()
-    console.log('locationnnn',document.location)
-  })
+
   return (
     <BrowserRouter>
       <Doc />
@@ -47,7 +43,7 @@ function App() {
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
           <Route exact path='/trails/:id' render={(props) => <Trail props={props} />} />
           <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
-          <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
+          <Route exact path='/user/:id/edit' render={(props) => <EditUser props={props} />} />
           <Route exact path='/user/edit'><EditUserMenu /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
           {/* <Route exact path='/'><Home /></Route> */}
