@@ -5,8 +5,7 @@
 ![](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2F5vAK2sRnNh6Fi%2Fgiphy-downsized.gif)
 ## Project Description
 
-This application will allow cyclist to find trails in their local or nearby city. It will give them 
-a list of trails by geolocation and identifying future bike routes they will like to visit. 
+This application allows cyclists to find trails in select cities. The app maintains a user-generated list of trails, conaining useful information regarding navigation to and from the trail, features, and ratings.
 
 ## Wireframes
 
